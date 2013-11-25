@@ -1,5 +1,4 @@
 
-
 Wolfing: WolframLang for Processing
 ===================================
 
@@ -64,12 +63,12 @@ Download Processing 1.5.1 [here](http://www.processing.org/download).
 ### Install Wolfing 
 
 
-Download the latest release [here](http://github.io/bitcraftlab/wolfing/releases/).
+Download the latest release [here](https://github.com/bitcraftlab/wolfing/releases/download/v.0.0.1/wolfing-0.0.1.zip).
 
 	
 1. Extract it to your Processing library folder
 
-		unzip wolfing.zip -d ~/sketchbook/libraries
+		unzip wolfing-0.0.1.zip -d ~/sketchbook/libraries
 
 
 2. Add JLink files:
