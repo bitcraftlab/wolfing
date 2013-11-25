@@ -1,0 +1,1 @@
+application.linux=wolfing.jar,JLink.jar,libJLinkNativeLibrary.so,JLink-License.txt
