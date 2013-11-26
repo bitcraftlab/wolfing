@@ -2,7 +2,7 @@ import bitcraftlab.wolfing.*;
 Wolfing wolf = new Wolfing();
 
 // get ready to draw
-size(1000, 1000);
+size(600, 800);
 background(255);
 fill(0); smooth();
 textFont(createFont("", 7));
