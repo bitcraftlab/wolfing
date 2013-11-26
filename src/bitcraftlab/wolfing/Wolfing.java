@@ -9,7 +9,7 @@ public class Wolfing {
 
 	// Paths to additional JNIs - not sure if the License permits to distribute those
 	static final String[] libs = {
-		"/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-ARM/CompilerAdditions/libML32i4.so"
+		//"/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-ARM/CompilerAdditions/libML32i4.so"
 	};
 
 
@@ -41,7 +41,7 @@ public class Wolfing {
 	// launch a mathematica kernel
 	void openLink() {
 		
-		String argv[] = { "-linkmode", "launch", "-linkname", "wolfram -mathlink" };
+		String argv[] = { "-linkmode", "launch", "-linkname", "/Applications/Mathematica.app/Contents/MacOS/MathKernel -mathlink" };
 
 		try {
 			ml = MathLinkFactory.createKernelLink(argv);

@@ -1,6 +1,9 @@
-# Makefile for the Wolfing Processing Library
+# Makefile for the Wolfing Processing Library - OSX Version
 
-JLINK_DIR=/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/JLink
+# JLINK_DIR=/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/JLink
+# JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/Linux-ARM/libJLinkNativeLibrary.so
+JLINK_DIR=/Applications/Mathematica.app/SystemFiles/Links/JLink
+JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/MacOSX-x86/libJLinkNativeLibrary.jnilib
 JLINK_JAR=$(JLINK_DIR)/JLink.jar
 
 LIBRARY=library/wolfing.jar
@@ -22,12 +25,12 @@ $(CLASSES):	$(SOURCES)
 	javac -cp ${JLINK_JAR} -d build ${SOURCES}
 
 link:
-	ln -t library -f -s $(JLINK_JAR)
-	ln -t library -f -s $(JLINK_DIR)/SystemFiles/Libraries/Linux-ARM/libJLinkNativeLibrary.so
-	ln -s $(JLINK_DIR)/License.txt library/JLink-License.txt
+	ln -f -s $(JLINK_JAR) library/
+	ln -f -s $(JLINK_LIB) library/
+	ln -f -s $(JLINK_DIR)/License.txt library/JLink-License.txt
 
 clean:
-	rm -r build/*
+	rm -rf build/*
 
 
 

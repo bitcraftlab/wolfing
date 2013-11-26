@@ -1,5 +1,6 @@
 /build/*
 /library/JLink.jar
 /library/libJLinkNativeLibrary.so
+/library/libJLinkNativeLibrary.jnilib
 /library/JLink-License.txt
 !.gitignore
