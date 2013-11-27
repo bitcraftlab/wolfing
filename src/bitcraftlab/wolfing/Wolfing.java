@@ -7,20 +7,31 @@ public class Wolfing {
 
 	KernelLink ml =  null;
 
-	// Paths to additional JNIs - not sure if the License permits to distribute those
+	// Paths to additional libs - not sure if the License permits to distribute those
 	static final String[] libs = {
 		//"/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-ARM/CompilerAdditions/libML32i4.so"
+		"/Applications/Mathematica Home Edition.app/SystemFiles/Links/MathLink/DeveloperKit/CompilerAdditions/libMLi3.a"
 	};
 
 
 	public Wolfing() {
 	
-
-		// We need to load additional JNIs manually
-		// Otherwise JLink fails, even if we got JLink.jar and libJLinkNativeLibrary.so
-
+		// We need to load the mathlink lib manually, otherwise the local copy of Jlink  embedded in exported applications won't work.
+		// In OSX this approach will cause an error when using the soft-linked JLink.jar (inside the Processing IDE)
+		// Simple solution: Try and Catch.
+		
 		for(String lib : libs) {
-			System.load(lib);
+			
+			try {
+
+				System.load(lib);
+
+			} catch(UnsatisfiedLinkError e) {
+
+				System.out.println("Info: Wolfing failed to load the library" + e.getMessage());
+				System.out.println("Don't worry!");
+
+			}
 		}
 		
 		openLink();
@@ -41,7 +52,7 @@ public class Wolfing {
 	// launch a mathematica kernel
 	void openLink() {
 		
-		String argv[] = { "-linkmode", "launch", "-linkname", "/Applications/Mathematica.app/Contents/MacOS/MathKernel -mathlink" };
+		String argv[] = { "-linkmode", "launch", "-linkname", "'/Applications/Mathematica Home Edition.app/Contents/MacOS/MathKernel' -mathlink" };
 
 		try {
 			ml = MathLinkFactory.createKernelLink(argv);
