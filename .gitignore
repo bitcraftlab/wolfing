@@ -3,4 +3,5 @@
 /library/libJLinkNativeLibrary.so
 /library/libJLinkNativeLibrary.jnilib
 /library/JLink-License.txt
+.DS_Store
 !.gitignore
