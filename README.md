@@ -6,9 +6,7 @@ Harness the power of Mathematica and Wolfram Alpha in your Processing Sketches!
 
 ![Screenshot](wolfing-screenshot.jpg)
 
-This library is targetted at RaspBerry Pi, which is currently the
-only platform where Mathematica and WolframLang are available free of charge,
-for personal and educational use.
+This is the branch of the library that is targetted at **OSX with Mathematica Home Edition**.
 
 ### Examples
 
@@ -26,58 +24,26 @@ Wolfing is not associated in any way with Wolfram Research or Mathematica.
 
 ### Getting started 
 
-These instructions refer to Raspbian on a Raspberry Pi.
+These instructions refer to OSX with Mathematica Home Edition and Processing 1.5.1.
 
+### Install Wolfing
 
-####  Install Mathematica
+1. Clone this repo to your sketchbook folder
 
-Open a terminal and type:
+		cd Documents/Processing/sketchbook
+		clone https://github.com/bitcraftlab/wolfing.git
+		
+2.	Make sure to checkout the OSX branch
 
-	sudo apt-get update && sudo apt-get install wolfram-engine
-
-
-#### Install Processing
-
-
-Download Processing 1.5.1 [here](http://www.processing.org/download).
-
-
-1. Extract
-
-		tar xvzf processing-1.5.1-linux.tgz
-
-2. Replace the bundled java by the Raspberry version
-
-		cd processing-1.5.1
-		rm -rf java
-		ln -s /usr/lib/jvm/jdk-7-oracle-armhf java
-
-3. Install
-	
-		cd ..
-		sudo mv processing-1.5.1 /opt
-		ln -s /opt/processing-1.5.1/processing ~/bin
-		chmod 755 ~/bin/processing
-
-
-### Install Wolfing 
-
-
-Download the latest release [here](https://github.com/bitcraftlab/wolfing/releases/download/v.0.0.1/wolfing-0.0.1.zip).
-
-	
-1. Extract it to your Processing library folder
-
-		unzip wolfing-0.0.1.zip -d ~/sketchbook/libraries
-
+		cd wolfing
+		git checkout osx
 
 2. Add JLink files:
 
-		cd sketchbook/libraries/wolfing
 		make link
 
 ### Export Applications from Processing
 
-When you export a sketch as application, Processing will automatically copy all libraries to the sketch. The application should now work out of the box on any Raspberry Pi that has wolfram-engine installed.
-
-
+When you export a sketch as application, Processing will automatically copy all libraries to the sketch.  
+The application should now work out of the box on any Mac that has Mathematica Home Edition installed.
+Use at your own risk and make sure to read the [JLink license](file:///Applications/Mathematica%20Home%20Edition.app/SystemFiles/Links/JLink/License.txt) if you plan to distribute your Application.
