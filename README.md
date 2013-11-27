@@ -24,7 +24,7 @@ Wolfing is not associated in any way with Wolfram Research or Mathematica.
 
 ### Getting started 
 
-These instructions refer to OSX with Mathematica Home Edition and Processing 1.5.1.
+These instructions refer to OSX with Mathematica Home Edition and **Processing 1.5.1**.
 
 ### Install Wolfing
 
