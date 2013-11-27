@@ -31,7 +31,7 @@ These instructions refer to OSX with Mathematica Home Edition and **Processing 1
 1. Clone this repo to your sketchbook folder
 
 		cd Documents/Processing/sketchbook
-		clone https://github.com/bitcraftlab/wolfing.git
+		git clone https://github.com/bitcraftlab/wolfing.git
 		
 2.	Make sure to checkout the OSX branch
 
