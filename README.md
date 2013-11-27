@@ -80,4 +80,8 @@ Download the latest release [here](https://github.com/bitcraftlab/wolfing/releas
 
 When you export a sketch as application, Processing will automatically copy all libraries to the sketch. The application should now work out of the box on any Raspberry Pi that has wolfram-engine installed.
 
+### Wolfing on other Operating Systems
 
+I adapted Wolfing for OSX with Mathematica Home License in the [OSX Branch](https://github.com/bitcraftlab/wolfing/tree/osx).  
+If you are running a different OS and Version of Mathematica, make sure to adjust the locations
+in the Makefile and the source accordingly.
