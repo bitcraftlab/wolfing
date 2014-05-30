@@ -55,4 +55,4 @@ When you export a sketch as application, Processing will automatically copy all 
 The application should now work out of the box on any Mac that has Mathematica installed.
 Use at your own risk and make sure to read the [JLink license](file:///Applications/Mathematica%20Home%20Edition.app/SystemFiles/Links/JLink/License.txt) if you plan to distribute your Application.
 
-[examples]: examples/readme.md
+[examples]: examples
