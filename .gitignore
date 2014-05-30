@@ -4,4 +4,5 @@
 /library/libJLinkNativeLibrary.jnilib
 /library/JLink-License.txt
 .DS_Store
+/examples/*/application.macosx/
 !.gitignore
