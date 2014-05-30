@@ -2,8 +2,8 @@
 
 # JLINK_DIR=/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/JLink
 # JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/Linux-ARM/libJLinkNativeLibrary.so
-JLINK_DIR=/Applications/Mathematica Home Edition.app/SystemFiles/Links/JLink
-JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/MacOSX-x86/libJLinkNativeLibrary.jnilib
+JLINK_DIR=/Applications/Mathematica.app/SystemFiles/Links/JLink
+JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/MacOSX-x86-64/libJLinkNativeLibrary.jnilib
 JLINK_JAR=$(JLINK_DIR)/JLink.jar
 
 LIBRARY=library/wolfing.jar

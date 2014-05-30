@@ -6,7 +6,8 @@ Harness the power of Mathematica and Wolfram Alpha in your Processing Sketches!
 
 ![Screenshot](wolfing-screenshot.jpg)
 
-This is the branch of the library that is targetted at **OSX with Mathematica Home Edition**.
+This branch of the library is targetted at **OSX + Mathematica 10 (64bit)**.  
+There is also a branch for OSX with Mathematica Home Edition...
 
 ### Examples
 
@@ -24,14 +25,14 @@ Wolfing is not associated in any way with Wolfram Research or Mathematica.
 
 ### Getting started 
 
-These instructions refer to OSX with Mathematica Home Edition and **Processing 1.5.1**.
+These instructions refer to **OSX** with **Mathematica 10.0** and **Processing 2.2.1**.
 
 ### Install Wolfing
 
 1. Clone this repo to your sketchbook folder
 
 		cd Documents/Processing/sketchbook
-		git clone https://github.com/bitcraftlab/wolfing.git
+		clone https://github.com/bitcraftlab/wolfing.git
 		
 2.	Make sure to checkout the OSX branch
 
@@ -45,5 +46,5 @@ These instructions refer to OSX with Mathematica Home Edition and **Processing 1
 ### Export Applications from Processing
 
 When you export a sketch as application, Processing will automatically copy all libraries to the sketch.  
-The application should now work out of the box on any Mac that has Mathematica Home Edition installed.
+The application should now work out of the box on any Mac that has Mathematica installed.
 Use at your own risk and make sure to read the [JLink license](file:///Applications/Mathematica%20Home%20Edition.app/SystemFiles/Links/JLink/License.txt) if you plan to distribute your Application.

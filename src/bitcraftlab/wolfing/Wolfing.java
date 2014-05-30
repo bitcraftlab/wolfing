@@ -10,7 +10,7 @@ public class Wolfing {
 	// Paths to additional libs - not sure if the License permits to distribute those
 	static final String[] libs = {
 		//"/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/MathLink/DeveloperKit/Linux-ARM/CompilerAdditions/libML32i4.so"
-		"/Applications/Mathematica Home Edition.app/SystemFiles/Links/MathLink/DeveloperKit/CompilerAdditions/libMLi3.a"
+   	    "/Applications/Mathematica.app/SystemFiles/Links/MathLink/DeveloperKit/MacOSX-x86-64/CompilerAdditions/libMLi3.a"
 	};
 
 
@@ -52,7 +52,7 @@ public class Wolfing {
 	// launch a mathematica kernel
 	void openLink() {
 		
-		String argv[] = { "-linkmode", "launch", "-linkname", "'/Applications/Mathematica Home Edition.app/Contents/MacOS/MathKernel' -mathlink" };
+		String argv[] = { "-linkmode", "launch", "-linkname", "'/Applications/Mathematica.app/Contents/MacOS/MathKernel' -mathlink" };
 
 		try {
 			ml = MathLinkFactory.createKernelLink(argv);
