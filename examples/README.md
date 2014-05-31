@@ -36,10 +36,10 @@ As a result the color palette is currently limited to 256 colors.
  
 ### Graphics3D ###
  
-Another Example of *EvalToImage*.  
+Another Example of *evalToImage*.  
 Using the powerfull `CellularAutomaton`, and `Graphics3D` functions of Mathematica. 
 
-![Graphics3D.jpg](Graphics3D.jpg)
+![Graphics3D.jpg](Graphics3D.jpg)]
 
 The Mathematica code looks like this:
 
@@ -53,3 +53,10 @@ The Mathematica code looks like this:
     	]
     , Boxed -> False]
  
+ 
+### Cellular Automaton ###
+ 
+Example for *evalToImage* with predefined Image size.  
+Note the use of the `PixelConstrained` attribute to get pixel perfect rendering.
+ 
+![CellularAutomaton.jpg](CellularAutomaton.jpg)
