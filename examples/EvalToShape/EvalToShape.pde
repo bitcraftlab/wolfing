@@ -30,7 +30,7 @@ void setup() {
   cam = new PeasyCam(this, 600);
 
   // create a new Mathlink
-  wolf = new Wolfing();
+  wolf = new Wolfing(this);
   
   nextShape();
   
@@ -45,8 +45,9 @@ void nextShape() {
   shp = exampleShape(shapeNames[pickShape]);
 
   // rescale to processing coordinates
-  shp.scale(1, -1, 1);
   shp.rotateX(HALF_PI);
+  shp.scale(1, -1, 1);
+
 
   // get shape dimensions
   h = shp.getHeight();
@@ -64,40 +65,17 @@ PShape exampleShape(String name) {
 
   // this may take some time ...
   int startTime = millis();
+  println("Start");
 
   // get a shape OBJ from mathematica
   String dataType = "Geometry3D";
   String dataObject = name;
   String cmd = "ExportString[ExampleData[{\"" + dataType + "\", \"" + name + "\"}], \"obj\"]";
-  String s = wolf.eval(cmd);
+  PShape shp = wolf.evalToShape(cmd);
 
-  // read input from a string
-  BufferedReader input = new BufferedReader(new StringReader(s));
-  PShape shp = loadShape(input);
-  
-  // feedback
   println("Loading the shape took: " + (millis() - startTime) / 1000.0 + " secs");
-  
   return shp;
   
-}
-
-
-// this is a hack to make loadShape work with buffered readers.
-PShape loadShape(BufferedReader input) {
-  
-  // We should not use the PShapeOBJ class directly.
-  // But this seems to be the only way to read OBJ files directly from strings.
-  PShapeOpenGL shape = null;
-  PShape obj = new PShapeOBJ(this, input); 
-  
-  if (obj != null) {
-    int prevTextureMode = g.textureMode;
-    shape = PShapeOpenGL.createShape3D((PGraphicsOpenGL) g, obj);
-    g.textureMode = prevTextureMode; 
-  }
-
-  return shape;
 }
 
 

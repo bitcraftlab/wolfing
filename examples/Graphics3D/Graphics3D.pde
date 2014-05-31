@@ -1,6 +1,6 @@
 // Render 3D Graphics in Mathematica + show them in Processing
 import bitcraftlab.wolfing.*;
-Wolfing wolf = new Wolfing();
+Wolfing wolf = new Wolfing(this);
 
 String cmd = ""
   + "Graphics3D["

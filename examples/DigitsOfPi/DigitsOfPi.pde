@@ -1,5 +1,5 @@
 import bitcraftlab.wolfing.*;
-Wolfing wolf = new Wolfing();
+Wolfing wolf = new Wolfing(this);
 
 // get ready to draw
 size(600, 800);

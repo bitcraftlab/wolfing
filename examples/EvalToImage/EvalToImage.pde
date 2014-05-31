@@ -1,7 +1,7 @@
 import bitcraftlab.wolfing.*;
 
 // create new MathLink
-Wolfing wolf = new Wolfing();
+Wolfing wolf = new Wolfing(this);
 
 // Load sample image from Mathematica's local folder
 // String cmd = "Import[\"ExampleData/lena.tif\"]";

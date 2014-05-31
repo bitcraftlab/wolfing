@@ -1,6 +1,6 @@
 import bitcraftlab.wolfing.*;
 
-Wolfing wolf = new Wolfing();
+Wolfing wolf = new Wolfing(this);
 
 String query = "1 + 1";
 String result = wolf.eval(query);

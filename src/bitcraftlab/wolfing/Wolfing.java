@@ -4,15 +4,26 @@ package bitcraftlab.wolfing;
 import com.wolfram.jlink.*;
 
 import processing.core.PImage;
+import processing.core.PGraphics;
 import processing.core.PApplet;
+import processing.core.PShape;
+import processing.core.PShapeOBJ;
+
+import processing.opengl.PShapeOpenGL;
+import processing.opengl.PGraphicsOpenGL;
 
 import java.io.ByteArrayInputStream;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
+import java.io.BufferedReader;
+import java.io.StringReader;
+
+
 public class Wolfing {
 
 	KernelLink ml =  null;
+	PApplet app;
 
 	// Paths to additional libs - not sure if the License permits to distribute those
 	static final String[] libs = {
@@ -21,12 +32,14 @@ public class Wolfing {
 	};
 
 
-	public Wolfing() {
+	public Wolfing(PApplet theApp) {
 	
 		// We need to load the mathlink lib manually, otherwise the local copy of Jlink  embedded in exported applications won't work.
 		// In OSX this approach will cause an error when using the soft-linked JLink.jar (inside the Processing IDE)
 		// Simple solution: Try and Catch.
 		
+		app = theApp;
+
 		for(String lib : libs) {
 			
 			try {
@@ -121,6 +134,24 @@ public class Wolfing {
 
 	}
 
+	// return evaluated query as shape
+	public PShape evalToShape(String query) {
+
+		PShape shp = null;
+		String str = eval(query);
+		
+		if(str != null) {
+
+			 // read input from a string
+  			BufferedReader input = new BufferedReader(new StringReader(str));
+  			shp = loadShape(input);
+
+		}
+		
+		return shp;
+
+	}
+
 
 	// return evaluate query as custom-sized image
 	public PImage evalToImage(String query, int width, int height) {
@@ -162,6 +193,27 @@ public class Wolfing {
 	    return new PImage(img2);
 
 	}
+
+	// loadShape for buffered readers.
+	private PShape loadShape(BufferedReader input) {
+
+		PShapeOpenGL shape = null;
+	  
+		// We should not use the PShapeOBJ class directly.
+		// But this seems to be the only way to read OBJ files directly from strings.
+		PShape obj = new PShapeOBJ(app, input);
+		PGraphics g = app.g;
+
+		if (obj != null) {
+			int prevTextureMode = g.textureMode;
+			shape = PShapeOpenGL.createShape3D((PGraphicsOpenGL) g, obj);
+			g.textureMode = prevTextureMode; 
+		}
+
+		return shape;
+	}
+
+
 
 
 }
