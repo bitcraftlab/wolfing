@@ -40,4 +40,16 @@ Another Example of *EvalToImage*.
 Using the powerfull `CellularAutomaton`, and `Graphics3D` functions of Mathematica. 
 
 ![Graphics3D.jpg](Graphics3D.jpg)
+
+The Mathematica code looks like this:
+
+    Graphics3D[
+    	Cuboid /@ Position[
+        	CellularAutomaton[
+        		{14, {2, 1}, {1, 1, 1}}, 
+    			{{{{1}}}, 0}, 
+    			{{{10}}}
+    		], 1	
+    	]
+    , Boxed -> False]
  
