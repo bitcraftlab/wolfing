@@ -112,13 +112,23 @@ public class Wolfing {
 		return null;	
 	}
 
+
 	// return evaluated query as image
 	public PImage evalToImage(String query) {
+
+		// automatic image size
+		return evalToImage(query, 0, 0);
+
+	}
+
+
+	// return evaluate query as custom-sized image
+	public PImage evalToImage(String query, int width, int height) {
 
 		// This does not seem to work ...
 		// ml.evaluateToOutputForm("JLink`$DefaultImageFormat = \"JPEG\"", 0);
 
-		byte[] bytes = ml.evaluateToImage(query, 0, 0);
+		byte[] bytes = ml.evaluateToImage(query, width, height);
 
   		try {
 		    ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
