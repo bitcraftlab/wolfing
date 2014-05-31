@@ -32,3 +32,11 @@ As a result the color palette is currently limited to 256 colors.
 
 ![EvalToImage.jpg](EvalToImage.jpg)
  
+ 
+### Graphics3D ###
+ 
+Another Example of *EvalToImage*
+Using the powerfull `CellularAutomaton`, and `Graphics3D` functions of Mathematica. 
+
+![Graphics3D.jpg](Graphics3D.jpg)
+ 
