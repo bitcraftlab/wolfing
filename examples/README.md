@@ -22,3 +22,7 @@ This example requires the `PeasyCam` library.
 
 ![ShapeData.jpg](ShapeData.jpg)
 
+
+### EvalToImage ###
+
+Example of how to get the result of an expression as an image.

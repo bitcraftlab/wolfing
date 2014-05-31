@@ -3,6 +3,13 @@ package bitcraftlab.wolfing;
 
 import com.wolfram.jlink.*;
 
+import processing.core.PImage;
+import processing.core.PApplet;
+
+import java.io.ByteArrayInputStream;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+
 public class Wolfing {
 
 	KernelLink ml =  null;
@@ -99,11 +106,51 @@ public class Wolfing {
 
 		} catch(MathLinkException e) {
 
-			System.out.println("Link missing in action: " +e.getMessage());
+			System.out.println("Link missing in action: " + e.getMessage());
 
 		}
 		return null;	
 	}
+
+	// return evaluated query as image
+	public PImage evalToImage(String query) {
+
+		ml.evaluateToOutputForm("$DefaultImageFormat = \"JPEG\"", 0);
+		byte[] bytes = ml.evaluateToImage(query, 0, 0);
+
+  		try {
+		    ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+		    BufferedImage image = ImageIO.read(bis);
+		    bis.close();
+		    PImage result = createPImage(image);
+		    return result;
+  		} 
+  		catch(Exception e) {
+   			e.printStackTrace();
+  		}
+
+		return null;
+	
+	}
+
+	// Safe method to turn any image into a PImage
+	private static PImage createPImage(BufferedImage img) {
+
+	    int w = img.getWidth();
+	    int h = img.getHeight();
+	    BufferedImage img2 = new BufferedImage(w, h, BufferedImage.TYPE_INT_RGB); 
+	    
+	    // copy pixels
+	    for (int x = 0; x < w; x++) {
+	        for (int y = 0; y < h; y++) {
+	            img2.setRGB(x, y, img.getRGB(x, y));
+	        }
+	    }
+	    
+	    return new PImage(img2);
+
+	}
+
 
 }
 

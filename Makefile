@@ -11,6 +11,9 @@ WOLFING=build/wolfing.jar
 SOURCES=src/bitcraftlab/wolfing/*.java
 CLASSES=build/bitcraftlab/wolfing/*.class
 
+P5_PATH=/Applications/Processing.app/Contents/Java
+P5_JARS=$(P5_PATH)/core.jar
+
 install:	$(LIBRARY)
 build:		$(WOLFING)
 compile:	$(CLASSES)
@@ -22,7 +25,7 @@ $(WOLFING):	$(CLASSES)
 	jar -cf $(WOLFING) -C build bitcraftlab
 
 $(CLASSES):	$(SOURCES)
-	javac -cp "${JLINK_JAR}" -d build ${SOURCES}
+	javac -cp "${JLINK_JAR}:${P5_JARS}" -d build ${SOURCES}
 
 link:
 	ln -f -s "$(JLINK_JAR)" library/
