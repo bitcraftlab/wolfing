@@ -5,6 +5,7 @@ Examples
 
 This example shows how to evaluate expressions and display the result in Processing.
 
+![HelloWolf.jpg](HelloWolf.jpg)
 
 ### Digits of Pi ###
 
