@@ -90,11 +90,11 @@ PShape loadShape(BufferedReader input) {
   // But this seems to be the only way to read OBJ files directly from strings.
   PShapeOpenGL shape = null;
   PShape obj = new PShapeOBJ(this, input); 
+  
   if (obj != null) {
     int prevTextureMode = g.textureMode;
     shape = PShapeOpenGL.createShape3D((PGraphicsOpenGL) g, obj);
     g.textureMode = prevTextureMode; 
-    println("SHAPE" + shape.getHeight());
   }
 
   return shape;
