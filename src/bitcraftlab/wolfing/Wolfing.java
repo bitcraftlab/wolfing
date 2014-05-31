@@ -115,7 +115,9 @@ public class Wolfing {
 	// return evaluated query as image
 	public PImage evalToImage(String query) {
 
-		ml.evaluateToOutputForm("$DefaultImageFormat = \"JPEG\"", 0);
+		// This does not seem to work ...
+		// ml.evaluateToOutputForm("JLink`$DefaultImageFormat = \"JPEG\"", 0);
+
 		byte[] bytes = ml.evaluateToImage(query, 0, 0);
 
   		try {

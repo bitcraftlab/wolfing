@@ -3,7 +3,10 @@ import bitcraftlab.wolfing.*;
 // create new MathLink
 Wolfing wolf = new Wolfing();
 
-// Load a sample image
+// Load sample image from Mathematica's local folder
+// String cmd = "Import[\"ExampleData/lena.tif\"]";
+
+// Load sample image from the cloud
 String type = "TestImage", name = "Lena";
 String cmd = "ExampleData[{\"" + type + "\", \"" + name + "\"}]";
 
