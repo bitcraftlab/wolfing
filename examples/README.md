@@ -16,13 +16,19 @@ The expression `N[Pi,  n]` returns the first `n` digits of **π**.
 
 ### ShapeData ###
 
-Example of how to generate `.OBJ` meshes in WolframLang,    
+Example of how to generate `.OBJ` meshes in WolframLang   
 and import the result directly into Processing PShape files.  
-This example requires the `PeasyCam` library.
+This example uses the `PeasyCam` library.
 
 ![ShapeData.jpg](ShapeData.jpg)
 
 
 ### EvalToImage ###
 
-Example of how to get the result of an expression as an image.
+Example of how to get the result of an expression as an image.  
+The expression `ExampleData[{"TestImage", "Lena"}]` loads a testimage.  
+Note that images retrieved via `wolf.evalToImage(...)` are encoded as GIFs.  
+As a result the color palette is currently limited to 256 colors.
+
+![EvalToImage.jpg](EvalToImage.jpg)
+ 
