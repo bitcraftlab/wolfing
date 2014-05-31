@@ -45,7 +45,7 @@ These instructions refer to **OSX** with **Mathematica 10.0** and **Processing 2
 
 ### Examples + Screenshots
 
-[![example screenshot](examples/ShapeData.jpg)][examples]
+[![example screenshot](examples/Graphics3D.jpg)][examples]
 
 A list of all the examples can be found [here][examples].
 
