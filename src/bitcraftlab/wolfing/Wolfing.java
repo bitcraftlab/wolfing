@@ -206,7 +206,7 @@ public class Wolfing {
 
 		if (obj != null) {
 			int prevTextureMode = g.textureMode;
-			shape = PShapeOpenGL.createShape3D((PGraphicsOpenGL) g, obj);
+			shape = PShapeOpenGL.createShape((PGraphicsOpenGL) g, obj);
 			g.textureMode = prevTextureMode; 
 		}
 
