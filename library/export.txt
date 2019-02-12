@@ -1,2 +1,2 @@
 application.linux=wolfing.jar,JLink.jar,libJLinkNativeLibrary.so,JLink-License.txt
-application.macosx=wolfing.jar,JLink.jar,libJLinkNativeLibrary.jnilib,JLink-license.txt
+application.macosx=wolfing.jar,JLink.jar,libJLinkNativeLibrary.jnilib,JLink-License.txt
