@@ -1,6 +1,6 @@
 ## Getting started (OSX)
 
-These instructions refer to **OSX** with **Mathematica 10.0** and **Processing 2.2.1**.
+These instructions refer to **OSX** with **Mathematica 11.0** and **Processing 3.4**.
 
 ### Install Wolfing
 
