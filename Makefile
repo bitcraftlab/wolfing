@@ -1,17 +1,26 @@
-# Makefile for the Wolfing Processing Library - OSX Version
+# Makefile for the Wolfing Processing Library
+UNAME=$(shell uname)
 
-# JLINK_DIR=/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/JLink
-# JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/Linux-ARM/libJLinkNativeLibrary.so
-JLINK_DIR=/Applications/Mathematica.app/SystemFiles/Links/JLink
+# JLINK location on OSX (Home Edition)
+ifeq ($(UNAME), Darwin)
+JLINK_DIR=/Applications/Mathematica.app/Contents/SystemFiles/Links/JLink
 JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/MacOSX-x86-64/libJLinkNativeLibrary.jnilib
-JLINK_JAR=$(JLINK_DIR)/JLink.jar
+P5_PATH=/Applications/Processing.app/Contents/Java
+endif
+
+# JLINK location on Raspberry Pi (not yet tested !!!)
+ifeq ($(UNAME), Linux)
+JLINK_DIR=/opt/Wolfram/WolframEngine/10.0/SystemFiles/Links/JLink
+JLINK_LIB=$(JLINK_DIR)/SystemFiles/Libraries/Linux-ARM/libJLinkNativeLibrary.so
+P5_PATH=/usr/local/lib/processing
+endif
 
 LIBRARY=library/wolfing.jar
 WOLFING=build/wolfing.jar
 SOURCES=src/bitcraftlab/wolfing/*.java
 CLASSES=build/bitcraftlab/wolfing/*.class
 
-P5_PATH=/Applications/Processing.app/Contents/Java
+JLINK_JAR=$(JLINK_DIR)/JLink.jar
 P5_JARS=$(P5_PATH)/core.jar
 
 install:	$(LIBRARY)
@@ -33,7 +42,5 @@ link:
 	ln -f -s "$(JLINK_DIR)/License.txt" library/JLink-License.txt
 
 clean:
-	rm -rf build/*
-
-
+	rm -r build/*
 
