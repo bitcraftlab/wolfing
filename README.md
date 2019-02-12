@@ -25,23 +25,8 @@ Wolfing is not associated in any way with Wolfram Research or Mathematica.
 
 ### Getting started 
 
-These instructions refer to **OSX** with **Mathematica 10.0** and **Processing 2.2.1**.
-
-### Install Wolfing
-
-1. Clone this repo to your sketchbook folder
-
-		cd Documents/Processing/sketchbook
-		clone https://github.com/bitcraftlab/wolfing.git
-		
-2.	Make sure to checkout the OSX branch
-
-		cd wolfing
-		git checkout osx
-
-2. Add JLink files:
-
-		make link
+- [Install on OSX](INSTALL-OSX.md)
+- [Install on Raspberry Pi](INSTALL-PI.md)
 
 ### Examples + Screenshots
 
