@@ -15,7 +15,6 @@ void draw() {
   image(img, 0, 0);
   fill(255, 200); noStroke();
   rect(10, 10, 80, 30);
-  textMode(CENTER);
   fill(0); text("RULE " + rule, 20, 30);
   
   // pick next rule
@@ -54,5 +53,3 @@ String getCommand(int rule, int iter) {
   ;
   
 }
-
-
