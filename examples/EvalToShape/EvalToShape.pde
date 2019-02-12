@@ -1,3 +1,6 @@
+// Note:
+// If you run this for the first time, it may take a while to download all the shapes
+
 import bitcraftlab.wolfing.*;
 import java.io.StringReader;
 import peasy.PeasyCam;
@@ -23,11 +26,11 @@ String shapeNames[] = {
 
 void setup() {
 
-  // screen size of 400x400 
-  size(400, 400, P3D);
+  // screen size of 800x800
+  size(800, 800, P3D);
 
-  // camera at a distance of 600 pixels
-  cam = new PeasyCam(this, 600);
+  // camera at a distance of 1200 pixels
+  cam = new PeasyCam(this, 1200);
 
   // create a new Mathlink
   wolf = new Wolfing(this);
@@ -46,8 +49,7 @@ void nextShape() {
 
   // rescale to processing coordinates
   shp.rotateX(HALF_PI);
-  shp.scale(1, -1, 1);
-
+  shp.rotateY(PI);
 
   // get shape dimensions
   h = shp.getHeight();
@@ -102,4 +104,3 @@ void keyPressed() {
   // press space to pick the next shape
   if(key == ' ') nextShape();
 }
-

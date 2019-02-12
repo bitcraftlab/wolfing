@@ -14,6 +14,5 @@ String cmd = "ExampleData[{\"" + type + "\", \"" + name + "\"}]";
 PImage result = wolf.evalToImage(cmd);
 
 // draw it to the canvas
-size(result.width, result.height);
+size(512, 512);
 image(result, 0, 0);
-
